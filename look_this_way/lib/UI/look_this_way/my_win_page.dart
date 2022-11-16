@@ -11,8 +11,8 @@ class my_win_ro_page extends StatefulWidget {
 }
 
 class _my_win_ro_pageState extends State<my_win_ro_page> {
-  String myfinger = "👆";
-  Image computer_face = Image.asset('images/point_up.png');
+  String myfinger = "👊";
+  Image computer_face = Image.asset('images/pose_reiwa_man.png');
   int cpu_face_num = 0;
   int button_valid = 1;
 

@@ -1,34 +1,29 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 
-
 class Constellation {
-  final List <String>result;
-  // final String enName;
-  // final String jpName;
+  final List enName;
+  final List jpName;
   // final String starImage_URL;
 
   Constellation({
-    required this.result,
-    // required this.enName,
-    // required this.jpName,
+    required this.enName,
+    required this.jpName,
     // required this.starImage_URL,
   });
 
-
-  factory Constellation.fromJson(Map<String,dynamic> json){
-
-    List <String> resultToList(dynamic result){
-
-      List <String>ret =[];
-      for(int i=0;i<result.length;i++){
+  factory Constellation.fromJson(Map<String, dynamic> json) {
+    List resultToList(dynamic result) {
+      List ret = [];
+      for (int i = 0; i < result.length; i++) {
         ret.add(result[i]['jpName']);
+      }
+      return ret;
     }
-  return ret;
 
+    return Constellation(
+      jpName: resultToList(json['result']),
+      enName: resultToList(json['result']),
+    );
   }
-  return Constellation(
-    result: resultToList(json['result']),
-  );
-}
 }
